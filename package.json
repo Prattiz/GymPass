@@ -4,7 +4,7 @@
   "description": "- [ ] Deve ser possível se cadastrar\r - [ ] Deve ser possível se autenticar\r - [ ] Deve ser possível obter o perfil de um usuário logado\r - [ ] Deve ser possível obter o número de check-ins realizados pelo usuário logado\r - [ ] Deve ser possível o usuário obter o seu histórico de check-ins\r - [ ] Deve ser possível o usuário buscar academias próximas\r - [ ] Deve ser possível o usuário buscar academias pelo nome\r - [ ] Deve ser possível o usuário realizar check-in em uma academia\r - [ ] Deve ser possível validar o check-in de um usuário\r - [ ] Deve ser possível cadastrar uma academia",
   "main": "index.js",
   "scripts": {
-    "start:dev": "tsx watch src/server.ts",
+    "dev": "tsx watch src/server.ts",
     "start": "node build/server.js",
     "build": "tsup src --out-dir build"
   },
@@ -18,6 +18,8 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "fastify": "^4.26.2"
+    "dotenv": "16.4.5",
+    "fastify": "^4.26.2",
+    "zod": "3.22.4"
   }
 }
