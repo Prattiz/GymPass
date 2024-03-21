@@ -3,9 +3,8 @@ import { FastifyRequest, FastifyReply } from "fastify";
 import { z } from "zod";
 
 import { RegisterUseCase } from "@/UseCases/register";
-import { InMemoryUsersRepos } from "@/Repository/in-memory-user-repos";
 import { PrismaUsersRepos } from "@/Repository/prisma/prisma-users.repos";
-import { userAlreadyExistsError } from "@/UseCases/errors/UserAlreadyExists";
+import { userAlreadyExistsError } from "@/UseCases/errors/userAlreadyExists";
 
 
 
