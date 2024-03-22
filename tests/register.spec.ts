@@ -5,16 +5,23 @@ import { userAlreadyExistsError } from "@/UseCases/errors/userAlreadyExists";
 
 import { compare } from "bcryptjs";
 
-import { expect, describe, it } from "vitest";
+import { expect, describe, it, beforeEach } from "vitest";
+
+
+let usersRepository: InMemoryUsersRepos;
+let sut: RegisterUseCase;
+
 
 describe("Register use case", () => {
 
-    it("should be able to register", async () => {
-        
-        const usersRepository = new InMemoryUsersRepos;
-        const sut = new RegisterUseCase(usersRepository);
+    beforeEach(() => {
 
-        
+        usersRepository = new InMemoryUsersRepos;
+        sut = new RegisterUseCase(usersRepository); 
+    });
+
+    it("should be able to register", async () => {
+
         const { user } = await sut.execute({
             name: 'Test-Name',
             email: "emailTest@test.com",
@@ -27,9 +34,6 @@ describe("Register use case", () => {
 
 
     it("should hash user password upon registration", async () => {
-        
-        const usersRepository = new InMemoryUsersRepos;
-        const sut = new RegisterUseCase(usersRepository);
         
         const { user } = await sut.execute({
             name: 'Test-Name',
@@ -46,9 +50,6 @@ describe("Register use case", () => {
     });
 
     it("should not be able to register with the same e-mail twice", async () => {
-        
-        const usersRepository = new InMemoryUsersRepos;
-        const sut = new RegisterUseCase(usersRepository);
 
         const email = 'notregistertwice@test.com'
         
