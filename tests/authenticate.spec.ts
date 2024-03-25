@@ -18,7 +18,7 @@ describe('Authenticate Use Case', () => {
 
     usersRepository = new InMemoryUsersRepos();
     sut = new AuthenticateUseCase(usersRepository);
-  })
+  });
 
 
   it('should be able to authenticate', async () => {
@@ -37,7 +37,7 @@ describe('Authenticate Use Case', () => {
     });
 
     expect(user.id).toEqual(expect.any(String))
-  })
+  });
 
   it('should not be able to authenticate with wrong email', async () => {
 
@@ -49,7 +49,7 @@ describe('Authenticate Use Case', () => {
         password: '123456',
       }),
     ).rejects.toBeInstanceOf(InvalidCredentialsError)
-  })
+  });
 
   it('should not be able to authenticate with wrong email', async () => {
 
@@ -67,5 +67,7 @@ describe('Authenticate Use Case', () => {
             password: '123123',
         }),
     ).rejects.toBeInstanceOf(InvalidCredentialsError)
-  })
+
+  });
+
 })
