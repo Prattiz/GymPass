@@ -1,4 +1,4 @@
-import { InMemoryUsersRepos } from '@/Repository/In-Memory/users-repos'
+import { InMemoryUsersRepos } from '@/Repository/In-Memory/InMemory-users-repos'
 import { ResourceNotFoundError } from '@/UseCases/errors/resourceNotFound'
 import { GetUserProfileUseCase } from '@/UseCases/getUserProfile'
 import { hash } from 'bcryptjs'

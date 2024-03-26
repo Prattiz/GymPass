@@ -1,4 +1,4 @@
-import { InMemoryUsersRepos } from '@/Repository/In-Memory/users-repos'; 
+import { InMemoryUsersRepos } from '@/Repository/In-Memory/InMemory-users-repos'; 
 import { AuthenticateUseCase } from '@/UseCases/authenticate';
 
 import { InvalidCredentialsError } from '@/UseCases/errors/invalidCredentials';

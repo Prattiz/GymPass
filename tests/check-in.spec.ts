@@ -1,5 +1,5 @@
 
-import { InMemoryCheckInsRepos } from '@/Repository/In-Memory/InMemoryCheckInRepos';
+import { InMemoryCheckInsRepos } from '@/Repository/In-Memory/InMemory-check-in-repos';
 import { CheckInUseCase } from '@/UseCases/checkIns';
 import { InvalidCredentialsError } from '@/UseCases/errors/invalidCredentials';
 

@@ -1,5 +1,5 @@
 import { CheckIn } from "@prisma/client";
-import { InMemoryCheckInsRepos } from "@/Repository/In-Memory/InMemoryCheckInRepos";
+import { InMemoryCheckInsRepos } from "@/Repository/In-Memory/InMemory-check-in-repos";
 import { InvalidCredentialsError } from "./errors/invalidCredentials";
 
 

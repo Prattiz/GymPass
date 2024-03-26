@@ -1,4 +1,4 @@
-import { InMemoryUsersRepos } from "@/Repository/In-Memory/users-repos";
+import { InMemoryUsersRepos } from "@/Repository/In-Memory/InMemory-users-repos";
 import { RegisterUseCase } from "@/UseCases/register";
 
 import { userAlreadyExistsError } from "@/UseCases/errors/userAlreadyExists";
