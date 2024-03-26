@@ -5,6 +5,7 @@ import { InMemoryCheckInsRepos } from "@/Repository/In-Memory/InMemory-check-in-
 
 import { InvalidCredentialsError } from "./errors/invalidCredentials";
 import { ResourceNotFoundError } from "./errors/resourceNotFound";
+import { getDistanceBetweenCoordinates, Coordinate } from "@/utils/get-distance-between-coordinates";
 
 
 
@@ -30,12 +31,21 @@ export class CheckInUseCase{
     ){}
 
 
-    async execute({ gymId, userId }:CheckInRequestProps):Promise<CheckInResponseProps>{
+    async execute({ gymId, userId, userLatitude, userLongitude }:CheckInRequestProps):Promise<CheckInResponseProps>{
 
         const gym = await this.gymsRepos.findById(gymId);
 
         if(!gym){
             throw new ResourceNotFoundError()
+        }
+
+        const distance = getDistanceBetweenCoordinates(
+            { latitude: userLatitude, longitude: userLongitude},
+            { latitude: gym.latitude.toNumber(), longitude: gym.longitude.toNumber()}
+        )
+
+        if( distance > 0.1 ){
+            throw new Error()
         }
 
         const checkInOnSameDay = await this.checkInsRepos.findByUserIdOnDate(
