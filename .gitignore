@@ -2,3 +2,4 @@ node_modules
 build
 .env
 coverage
+gyms-repository.ts

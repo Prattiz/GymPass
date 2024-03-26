@@ -1,18 +1,18 @@
 
-import { InMemoryCheckInsRepository } from '@/Repository/In-Memory/InMemoryCheckInRepos';
+import { InMemoryCheckInsRepos } from '@/Repository/In-Memory/InMemoryCheckInRepos';
 import { CheckInUseCase } from '@/UseCases/checkIns';
 import { InvalidCredentialsError } from '@/UseCases/errors/invalidCredentials';
 
 import { expect, describe, it, beforeEach, afterEach, vi } from 'vitest';
 
 
-let checkInsRepository: InMemoryCheckInsRepository
+let checkInsRepository: InMemoryCheckInsRepos
 let sut: CheckInUseCase
 
 describe('Check-in Use Case', () => {
 
     beforeEach(() => {
-        checkInsRepository = new InMemoryCheckInsRepository()
+        checkInsRepository = new InMemoryCheckInsRepos()
         sut = new CheckInUseCase(checkInsRepository)
         vi.useFakeTimers()
     });

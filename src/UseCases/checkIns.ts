@@ -1,5 +1,5 @@
 import { CheckIn } from "@prisma/client";
-import { InMemoryCheckInsRepository } from "@/Repository/In-Memory/InMemoryCheckInRepos";
+import { InMemoryCheckInsRepos } from "@/Repository/In-Memory/InMemoryCheckInRepos";
 import { InvalidCredentialsError } from "./errors/invalidCredentials";
 
 
@@ -17,7 +17,7 @@ interface CheckInResponseProps{
 
 export class CheckInUseCase{
     constructor(
-        private checkInsRepos: InMemoryCheckInsRepository
+        private checkInsRepos: InMemoryCheckInsRepos
     ){}
 
 
