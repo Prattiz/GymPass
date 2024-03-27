@@ -3,10 +3,11 @@ import { CheckIn } from "@prisma/client";
 import { InMemoryGymsRepos } from "@/Repository/In-Memory/InMemory-gyms-repos";
 import { InMemoryCheckInsRepos } from "@/Repository/In-Memory/InMemory-check-in-repos";
 
-import { InvalidCredentialsError } from "./errors/invalidCredentials";
 import { ResourceNotFoundError } from "./errors/resourceNotFound";
-import { getDistanceBetweenCoordinates, Coordinate } from "@/utils/get-distance-between-coordinates";
+import { MaxDistanceError } from "./errors/maxDistance";
+import { MaxNumberOfCheckInsError } from "./errors/maxNumberOfCheckIns";
 
+import { getDistanceBetweenCoordinates } from "@/utils/get-distance-between-coordinates";
 
 
 interface CheckInRequestProps{
@@ -34,7 +35,7 @@ export class CheckInUseCase{
     async execute({ gymId, userId, userLatitude, userLongitude }:CheckInRequestProps):Promise<CheckInResponseProps>{
 
         const gym = await this.gymsRepos.findById(gymId);
-
+        
         if(!gym){
             throw new ResourceNotFoundError()
         }
@@ -45,7 +46,7 @@ export class CheckInUseCase{
         )
 
         if( distance > 0.1 ){
-            throw new Error()
+            throw new MaxDistanceError()
         }
 
         const checkInOnSameDay = await this.checkInsRepos.findByUserIdOnDate(
@@ -54,7 +55,7 @@ export class CheckInUseCase{
           )
       
           if (checkInOnSameDay) {
-            throw new InvalidCredentialsError()
+            throw new MaxNumberOfCheckInsError()
           }
 
         const checkIn = await this.checkInsRepos.create({
