@@ -9,24 +9,24 @@ import { expect, describe, it, beforeEach, afterEach, vi } from 'vitest';
 
 
 let checkInsRepository: InMemoryCheckInsRepos
-let gymRepos: InMemoryGymsRepos
+let gymRepository: InMemoryGymsRepos
 let sut: CheckInUseCase
 
 describe('Check-in Use Case', () => {
 
-    beforeEach(() => {
+    beforeEach(async () => {
         checkInsRepository = new InMemoryCheckInsRepos()
-        gymRepos = new InMemoryGymsRepos()
-        sut = new CheckInUseCase(checkInsRepository, gymRepos)
+        gymRepository = new InMemoryGymsRepos()
+        sut = new CheckInUseCase(checkInsRepository, gymRepository)
 
-        gymRepos.items.push({
+        await gymRepository.create({
 
           id: 'gym-01',
           title: 'Gym-Test',
-          description: '',
-          phone: '',
-          latitude: new Decimal(0),
-          longitude: new Decimal(0)
+          description: null,
+          phone: null,
+          latitude: 0,
+          longitude: 0,
         })
 
         vi.useFakeTimers()
@@ -39,6 +39,7 @@ describe('Check-in Use Case', () => {
     it('should be able to check in', async () => {
 
     const { checkIn } = await sut.execute({
+
         gymId: 'gym-01',
         userId: 'user-01',
         userLatitude: 0,
@@ -50,6 +51,7 @@ describe('Check-in Use Case', () => {
     });
 
     it('should not be able to check in twice in the same day', async () => {
+
         vi.setSystemTime(new Date(2022, 0, 20, 8, 0, 0))
     
         await sut.execute({
@@ -70,6 +72,7 @@ describe('Check-in Use Case', () => {
       });
     
       it('should be able to check in twice but in different days', async () => {
+
         vi.setSystemTime(new Date(2022, 0, 20, 8, 0, 0))
     
         await sut.execute({
@@ -86,16 +89,17 @@ describe('Check-in Use Case', () => {
           userId: 'user-01',
           userLatitude: 0,
           userLongitude: 0,
-        })
+        });
     
         expect(checkIn.id).toEqual(expect.any(String))
       });
 
       it('should not be able to check in on distant gym', async () => {
 
-        gymRepos.items.push({
+        gymRepository.items.push({
+          
           id: 'gym-02',
-          title: 'JavaScript Gym',
+          title: 'Test-Gym',
           description: '',
           phone: '',
           latitude: new Decimal(-27.0747279),
