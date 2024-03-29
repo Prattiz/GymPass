@@ -5,6 +5,7 @@ import { InMemoryCheckInsRepos } from "@/Repository/In-Memory/InMemory-check-in-
 import { ResourceNotFoundError } from "./errors/resourceNotFound";
 import dayjs from "dayjs";
 import { LateCheckInValidationError } from "./errors/lateCheckInValidation";
+import { CheckInsRepository } from "@/Repository/checkIn-repository";
 
 
 interface ValidateCheckInRequest{
@@ -22,7 +23,7 @@ interface ValidateCheckInResponse{
 export class ValidateCheckInUseCase{
 
     constructor(
-        private validateCheckInsRepos: InMemoryCheckInsRepos,
+        private validateCheckInsRepos: CheckInsRepository,
     ){}
 
 

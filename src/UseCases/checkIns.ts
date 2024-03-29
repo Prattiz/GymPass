@@ -8,6 +8,8 @@ import { MaxDistanceError } from "./errors/maxDistance";
 import { MaxNumberOfCheckInsError } from "./errors/maxNumberOfCheckIns";
 
 import { getDistanceBetweenCoordinates } from "@/utils/get-distance-between-coordinates";
+import { GymsRepository } from "@/Repository/gyms-repository";
+import { CheckInsRepository } from "@/Repository/checkIn-repository";
 
 
 interface CheckInRequestProps{
@@ -27,8 +29,8 @@ interface CheckInResponseProps{
 export class CheckInUseCase{
 
     constructor(
-        private checkInsRepos: InMemoryCheckInsRepos,
-        private gymsRepos: InMemoryGymsRepos
+        private checkInsRepos: CheckInsRepository,
+        private gymsRepos: GymsRepository
     ){}
 
 

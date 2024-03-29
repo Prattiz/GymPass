@@ -3,7 +3,7 @@ import { FastifyRequest, FastifyReply } from "fastify";
 import { z } from "zod";
 
 import { userAlreadyExistsError } from "@/UseCases/errors/userAlreadyExists";
-import { makeRegisterUseCase } from "@/UseCases/Factories/makeRegisterUseCase";
+import { makeRegisterUseCase } from "@/UseCases/factories/makeRegisterUseCase";
 
 
 export async function Register(request: FastifyRequest, reply: FastifyReply){

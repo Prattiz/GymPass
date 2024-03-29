@@ -75,3 +75,4 @@ export class PrismaCheckInsRepository implements CheckInsRepository {
     return checkIn
   }
 }
+
