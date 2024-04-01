@@ -1,4 +1,4 @@
-import { UsersRepository } from "@/Repository/users-repository";
+import { UsersRepository } from "@/repository/users-repository";
 
 import { InvalidCredentialsError } from "./errors/invalidCredentials";
 

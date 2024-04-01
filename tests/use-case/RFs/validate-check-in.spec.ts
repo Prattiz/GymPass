@@ -1,6 +1,6 @@
-import { InMemoryCheckInsRepos } from '@/Repository/In-Memory/InMemory-check-in-repos';
-import { ResourceNotFoundError } from '@/UseCases/errors/resourceNotFound';
-import { ValidateCheckInUseCase } from '@/UseCases/validateCheckIn';
+import { InMemoryCheckInsRepos } from '@/repository/In-Memory/InMemory-check-in-repos';
+import { ResourceNotFoundError } from '@/use-cases/errors/resourceNotFound';
+import { ValidateCheckInUseCase } from '@/use-cases/validateCheckIn';
 
 import { expect, describe, it, beforeEach, afterEach, vi } from 'vitest';
 

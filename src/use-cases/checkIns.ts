@@ -1,15 +1,12 @@
 import { CheckIn } from "@prisma/client";
 
-import { InMemoryGymsRepos } from "@/Repository/In-Memory/InMemory-gyms-repos";
-import { InMemoryCheckInsRepos } from "@/Repository/In-Memory/InMemory-check-in-repos";
-
 import { ResourceNotFoundError } from "./errors/resourceNotFound";
 import { MaxDistanceError } from "./errors/maxDistance";
 import { MaxNumberOfCheckInsError } from "./errors/maxNumberOfCheckIns";
 
 import { getDistanceBetweenCoordinates } from "@/utils/get-distance-between-coordinates";
-import { GymsRepository } from "@/Repository/gyms-repository";
-import { CheckInsRepository } from "@/Repository/checkIn-repository";
+import { GymsRepository } from "@/repository/gyms-repository";
+import { CheckInsRepository } from "@/repository/checkIn-repository";
 
 
 interface CheckInRequestProps{

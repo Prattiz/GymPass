@@ -1,7 +1,7 @@
-import { InMemoryUsersRepos } from "@/Repository/In-Memory/InMemory-users-repos";
-import { RegisterUseCase } from "@/UseCases/register";
+import { InMemoryUsersRepos } from "@/repository/In-Memory/InMemory-users-repos";
+import { RegisterUseCase } from "@/use-cases/register";
 
-import { userAlreadyExistsError } from "@/UseCases/errors/userAlreadyExists";
+import { userAlreadyExistsError } from "@/use-cases/errors/userAlreadyExists";
 
 import { compare } from "bcryptjs";
 

@@ -1,5 +1,5 @@
-import { InMemoryGymsRepos } from '@/Repository/In-Memory/InMemory-gyms-repos';
-import { FetchNearbyGymsUseCase } from '@/UseCases/fetchNearbyGyms';
+import { InMemoryGymsRepos } from '@/repository/In-Memory/InMemory-gyms-repos';
+import { FetchNearbyGymsUseCase } from '@/use-cases/fetchNearbyGyms';
 
 import { expect, describe, it, beforeEach } from 'vitest';
 

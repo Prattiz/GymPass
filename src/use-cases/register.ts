@@ -1,10 +1,10 @@
-import { UsersRepository } from "@/Repository/users-repository";
+import type { User } from "@prisma/client";
+
+import { UsersRepository } from "@/repository/users-repository";
 
 import { hash } from "bcryptjs"
 
 import { userAlreadyExistsError } from "./errors/userAlreadyExists";
-
-import type { User } from "@prisma/client";
 
 
 interface RegisterUseCaseRequest {
@@ -33,6 +33,7 @@ export class RegisterUseCase {
     }
 
     const user = await this.usersRepository.create({
+
       name,
       email,
       password_hash,

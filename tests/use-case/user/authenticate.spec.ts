@@ -1,7 +1,7 @@
-import { InMemoryUsersRepos } from '@/Repository/In-Memory/InMemory-users-repos'; 
-import { AuthenticateUseCase } from '@/UseCases/authenticate';
+import { InMemoryUsersRepos } from '@/repository/In-Memory/InMemory-users-repos'; 
+import { AuthenticateUseCase } from '@/use-cases/authenticate';
 
-import { InvalidCredentialsError } from '@/UseCases/errors/invalidCredentials';
+import { InvalidCredentialsError } from '@/use-cases/errors/invalidCredentials';
 
 import { hash } from 'bcryptjs';
 

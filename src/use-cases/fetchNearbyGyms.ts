@@ -1,4 +1,4 @@
-import { GymsRepository } from "@/Repository/gyms-repository";
+import { GymsRepository } from "@/repository/gyms-repository";
 
 import { Gym } from '@prisma/client';
 

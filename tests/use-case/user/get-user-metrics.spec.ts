@@ -1,5 +1,5 @@
-import { InMemoryCheckInsRepos } from '@/Repository/In-Memory/InMemory-check-in-repos';
-import { GetUserMetricsUseCase } from '@/UseCases/getUserMetrics';
+import { InMemoryCheckInsRepos } from '@/repository/In-Memory/InMemory-check-in-repos';
+import { GetUserMetricsUseCase } from '@/use-cases/getUserMetrics';
 
 import { expect, describe, it, beforeEach } from 'vitest';
 

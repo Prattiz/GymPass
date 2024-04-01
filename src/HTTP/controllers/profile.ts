@@ -1,4 +1,4 @@
-import { makeGetUserProfileUseCase } from "@/UseCases/factories/makeGetUserProfileUseCase";
+import { makeGetUserProfileUseCase } from "@/use-cases/factories/makeGetUserProfileUseCase";
 import { FastifyRequest, FastifyReply } from "fastify";
 
 

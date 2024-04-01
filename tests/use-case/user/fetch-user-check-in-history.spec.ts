@@ -1,5 +1,5 @@
-import { InMemoryCheckInsRepos } from '@/Repository/In-Memory/InMemory-check-in-repos';
-import { FetchUserCheckInsHistoryUseCase } from '@/UseCases/fetchUserCheckInHistory';
+import { InMemoryCheckInsRepos } from '@/repository/In-Memory/InMemory-check-in-repos';
+import { FetchUserCheckInsHistoryUseCase } from '@/use-cases/fetchUserCheckInHistory';
 
 
 import { expect, describe, it, beforeEach } from 'vitest';

@@ -1,11 +1,12 @@
 import { CheckIn } from "@prisma/client";
 
-import { InMemoryGymsRepos } from "@/Repository/In-Memory/InMemory-gyms-repos";
-import { InMemoryCheckInsRepos } from "@/Repository/In-Memory/InMemory-check-in-repos";
-import { ResourceNotFoundError } from "./errors/resourceNotFound";
+import { CheckInsRepository } from "@/repository/checkIn-repository";
+
 import dayjs from "dayjs";
+
+import { ResourceNotFoundError } from "./errors/resourceNotFound";
 import { LateCheckInValidationError } from "./errors/lateCheckInValidation";
-import { CheckInsRepository } from "@/Repository/checkIn-repository";
+
 
 
 interface ValidateCheckInRequest{
