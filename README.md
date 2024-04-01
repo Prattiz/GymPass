@@ -10,6 +10,7 @@
  - Zod
  - Testes Unitarios (Vitest)
  - Dayjs
+ - JWT 
 
 ## RFs (Requisitos funcionais)
 
