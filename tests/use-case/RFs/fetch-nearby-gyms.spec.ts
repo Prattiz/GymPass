@@ -11,6 +11,7 @@ let sut: FetchNearbyGymsUseCase
 describe('Fetch Nearby Gyms Use Case', () => {
 
   beforeEach(async () => {
+
     gymsRepository = new InMemoryGymsRepos()
     sut = new FetchNearbyGymsUseCase(gymsRepository)
   });
@@ -34,6 +35,7 @@ describe('Fetch Nearby Gyms Use Case', () => {
     })
 
     const { gyms } = await sut.execute({
+      
       userLatitude: -27.2092052,
       userLongitude: -49.6401091,
     });

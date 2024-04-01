@@ -2,7 +2,6 @@
 import { InMemoryCheckInsRepos } from '@/Repository/In-Memory/InMemory-check-in-repos';
 import { InMemoryGymsRepos } from '@/Repository/In-Memory/InMemory-gyms-repos';
 import { CheckInUseCase } from '@/UseCases/checkIns';
-import { InvalidCredentialsError } from '@/UseCases/errors/invalidCredentials';
 import { MaxDistanceError } from '@/UseCases/errors/maxDistance';
 import { MaxNumberOfCheckInsError } from '@/UseCases/errors/maxNumberOfCheckIns';
 import { Decimal } from '@prisma/client/runtime/library';
@@ -17,6 +16,7 @@ let sut: CheckInUseCase
 describe('Check-in Use Case', () => {
 
     beforeEach(async () => {
+      
         checkInsRepository = new InMemoryCheckInsRepos()
         gymRepository = new InMemoryGymsRepos()
         sut = new CheckInUseCase(checkInsRepository, gymRepository)

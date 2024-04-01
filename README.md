@@ -8,7 +8,7 @@
  - Bcryptjs
  - Fastify
  - Zod
- - Testes Unitarios (Vitest)
+ - Testes Unitarios & E2E (Vitest)
  - Dayjs
  - JWT 
 
