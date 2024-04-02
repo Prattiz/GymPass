@@ -9,10 +9,11 @@
  - Fastify
  - Zod
  - Testes Unitarios & E2E (Vitest)
+ - Super-Test
  - Dayjs
  - JWT 
 
-## RFs (Requisitos funcionais)
+## RFs (Requisitos funcionais) --->
 
 - [X] Deve ser possível se cadastrar
 - [X] Deve ser possível se autenticar
@@ -25,7 +26,7 @@
 - [X] Deve ser possível validar o check-in de um usuário
 - [X] Deve ser possível cadastrar uma academia
 
-## RNs (Regras de negócio)
+## RNs (Regras de negócio) --->
 
 - [X] O usuário não deve poder se cadastrar com um e-mail duplicado
 - [X] O usuário não pode fazer 2 check-ins no mesmo dia
@@ -34,7 +35,7 @@
 - [ ] O check-in só pode ser validado por administradores
 - [ ] A academia só pode ser cadastrada por administradores
 
-## RNFs (Requisitos não-funcionais)
+## RNFs (Requisitos não-funcionais) --->
 
 - [X] A senha do usuário precisa estar criptografada
 - [X] Os dados da aplicação precisam estar persistidos em um banco PostgreSQL
