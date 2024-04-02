@@ -18,10 +18,11 @@ export async function createGym(request: FastifyRequest, reply: FastifyReply) {
     }),
   });
 
-  const createGymUseCase = makeCreateGymUseCase();
+
 
   const { title, description, phone, latitude, longitude } = createGymBodySchema.parse(request.body);
-
+  const createGymUseCase = makeCreateGymUseCase();
+  
   await createGymUseCase.execute({
 
     title,
