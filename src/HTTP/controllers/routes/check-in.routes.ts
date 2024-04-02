@@ -7,9 +7,10 @@ import { Validate } from '../check-ins/validate';
 import { History } from '../check-ins/history';
 import { Metrics } from '../check-ins/metrics';
 
-export async function checkInsRoutes(app: FastifyInstance) {
+export async function CheckInsRoutes(app: FastifyInstance) {
   app.addHook('onRequest', verifyJwt)
 
+  
   app.get('/check-ins/history', History)
   app.get('/check-ins/metrics', Metrics)
 

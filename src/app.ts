@@ -7,6 +7,7 @@ import { env } from "./env";
 
 import { UserRoutes } from "./HTTP/controllers/routes/user.routes";
 import { GymRoutes } from "./HTTP/controllers/routes/gym.routes";
+import { CheckInsRoutes } from "./HTTP/controllers/routes/check-in.routes";
 
 
 export const app = fastify()
@@ -17,6 +18,7 @@ app.register(fastifyJwt, {
 
 app.register(UserRoutes);
 app.register(GymRoutes);
+app.register(CheckInsRoutes);
 
 app.setErrorHandler(( error, _, reply ) => {
 
