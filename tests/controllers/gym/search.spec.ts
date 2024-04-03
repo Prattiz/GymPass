@@ -23,8 +23,8 @@ describe('Search Gyms (e2e)', () => {
       .post('/gyms')
       .set('Authorization', `Bearer ${token}`)
       .send({
-        title: 'GymONE',
-        description: '',
+        title: 'Gym one',
+        description: 'a',
         phone: '9999999999',
         latitude: -27.2092052,
         longitude: -49.6401091,
@@ -34,8 +34,8 @@ describe('Search Gyms (e2e)', () => {
       .post('/gyms')
       .set('Authorization', `Bearer ${token}`)
       .send({
-        title: 'GymTWO',
-        description: '',
+        title: 'Gym TWO',
+        description: 'a',
         phone: '1999999999',
         latitude: -27.2092052,
         longitude: -49.6401091,
@@ -44,7 +44,7 @@ describe('Search Gyms (e2e)', () => {
     const response = await request(app.server)
       .get('/gyms/search')
       .query({
-        q: 'ONE',
+        q: 'one',
       })
       .set('Authorization', `Bearer ${token}`)
       .send()
@@ -55,7 +55,7 @@ describe('Search Gyms (e2e)', () => {
 
     expect(response.body.gyms).toEqual([
       expect.objectContaining({
-        title: 'GymONE',
+        title: 'Gym one',
       }),
     ])
 

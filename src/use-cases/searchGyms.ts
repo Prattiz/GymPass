@@ -6,11 +6,10 @@ interface SearchGymsUseCaseRequest {
     
     query: string,
     page: number,
-
 }
 
 interface SearchGymsUseCaseResponse {
-  gym: Gym[]
+  gyms: Gym[]
 }
 
 export class SearchGymsUseCase {
@@ -19,11 +18,11 @@ export class SearchGymsUseCase {
 
   async execute({ query, page }: SearchGymsUseCaseRequest): Promise<SearchGymsUseCaseResponse> {
 
-    const gym = await this.GymsRepository.searchMany(
+    const gyms = await this.GymsRepository.searchMany(
         query,
         page
     )
 
-    return { gym }
+    return { gyms }
   }
 }

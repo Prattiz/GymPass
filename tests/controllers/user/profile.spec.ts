@@ -18,7 +18,6 @@ describe('Profile (e2e)', () => {
 
     const { token } = await createAndAuthenticateUser(app)
 
-    console.log(`------------------------------------------- ${token} -------------------------------------------`)
 
     const profileResponse = await request(app.server)
       .get('/me')
