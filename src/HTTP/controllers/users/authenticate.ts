@@ -26,14 +26,14 @@ export async function Authenticate(request: FastifyRequest, reply: FastifyReply)
         password,
       });
 
-      const token = await reply.jwtSign({}, {
+      const token = await reply.jwtSign({ role: user.role }, {
         sign: {
           sub: user.id
         }
       });
 
       const refreshToken = await reply.jwtSign(
-        {},
+        { role: user.role },
         {
           sign: {
             sub: user.id,
