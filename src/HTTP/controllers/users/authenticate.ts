@@ -43,7 +43,7 @@ export async function Authenticate(request: FastifyRequest, reply: FastifyReply)
       )
 
       return reply
-      .setCookie(refreshToken, 'refreshToken', {
+      .setCookie('refreshToken', refreshToken, {
         path: '/',
         secure: true,
         sameSite: true,
