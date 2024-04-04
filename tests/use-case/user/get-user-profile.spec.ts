@@ -6,6 +6,7 @@ import { expect, describe, it, beforeEach } from 'vitest'
 
 let usersRepository: InMemoryUsersRepos
 let sut: GetUserProfileUseCase
+let role 
 
 describe('Get User Profile Use Case', () => {
 
