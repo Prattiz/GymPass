@@ -8,10 +8,17 @@
  - Bcryptjs
  - Fastify
  - Zod
- - Testes Unitarios & E2E (Vitest)
+ - Vitest
  - Super-Test
  - Dayjs
  - JWT 
+
+## Habilidades -->
+
+ - Testes Unitarios
+ - Testes E2E
+ - Git Hub Actions
+
 
 ## RFs (Requisitos funcionais) --->
 
