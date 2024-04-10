@@ -1,5 +1,13 @@
 # GymPass
 
+O GymPass é uma aplicação voltada para o gerenciamento de check-ins em academias. 
+Seu objetivo principal é fornecer aos usuários a capacidade de se cadastrar, 
+autenticar-se e realizar check-ins em academias próximas. 
+Além disso, os usuários podem visualizar seu perfil, 
+histórico de check-ins e buscar academias por nome ou proximidade. 
+A aplicação impõe algumas regras de negócio, como evitar cadastros duplicados, 
+limitar check-ins diários e validar a proximidade do usuário com a academia.
+
 ## Tecnologias -->
 
  - Node.js
